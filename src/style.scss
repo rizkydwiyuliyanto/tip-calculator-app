@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+:root {
+    --fs-small: 0.95rem;
+    --fs-normal: 1.25rem;
+    --fs-medium: 1.7rem;
+    --fs-large: 3rem;
+    @media screen and (max-width: 1439px) {
+        --fs-small: 0.8rem;
+        --fs-normal: 1rem;
+        --fs-medium: 1.5rem;
+        --fs-large: 2rem;
+    }
+    @media screen and (max-width: 799px) {
+        --fs-small: 0.9rem;
+        --fs-normal: 1rem;
+        --fs-medium: 1.4rem;
+        --fs-large: 1.7rem;
+    }
+}
+
+body {
+    background-color: #C5E4E7;
+    font-family: 'Space Mono';
+}
+
+* {
+    padding:0; margin:0; 
+    box-sizing: border-box;
+}
+
+.fs-small {
+    font-size: var(--fs-small);
+}
+
+.fs-normal {
+    font-size: var(--fs-normal);
+}
+
+.fs-medium {
+    font-size: var(--fs-medium);
+}
+
+.fs-large {
+    font-size: var(--fs-large);
+}
+
+.fc-very-dark-cyan {
+    color: hsl(183, 100%, 15%);
+}
+
+.fc-grayish-cyan {
+    color: hsl(184, 14%, 56%);
+}
+
+@mixin mycontainer {
+    max-width: 1440px;
+    margin: 0 auto;
+    @media screen and (max-width: 1439px) {
+        width: 80%;
+    }
+    @media screen and (max-width: 799px) {
+        width: 100%;
+    }
+}
+
+.content {
+    @include mycontainer();
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    width: 100%;
+}
+
+
+.button-tip {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+
+.input-bill {
+    background-color: #F3F8FB;
+    input {
+        font-weight: bold;
+        color: hsl(183, 100%, 15%);
+        background: none;
+        border: none;
+        font-size: 24px;
+        outline: none;
+    }
+}
+
+.tips{
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    row-gap: 10px;
+    justify-content: space-between;
+    .item {
+        background-color:  hsl(183, 100%, 15%);
+    }
+    .item-selected {
+        background-color:hsl(172, 67%, 45%);
+    }
+    @media screen and (max-width: 799px) {
+        grid-template-columns: repeat(2, 45%);
+    }
+}
+.total {
+    background-color: hsl(183, 100%, 15%);
+    .button {
+        background: hsl(172, 67%, 45%);
+        border: none;
+        color: hsl(183, 100%, 15%);
+    }
+}
+
+// .title{
+
+// }
