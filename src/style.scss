@@ -79,9 +79,13 @@ body {
     }
 }
 
+.item-custom {
+    background-color: #e8f3fa;
+    color: hsl(184, 14%, 56%);
+}
 
 .input-bill {
-    background-color: #F3F8FB;
+    background-color: #e8f3fa;
     input {
         font-weight: bold;
         color: hsl(183, 100%, 15%);

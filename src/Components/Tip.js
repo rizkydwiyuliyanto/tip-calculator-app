@@ -14,9 +14,10 @@ const Tip = ({ SelectedTip, SetSelectedTip  }) => {
     const handleClick = (comp) => {
         console.log(comp)
         SetSelectedTip(SelectedTip.map(item => {
-            return item.comp === comp? {...item, select: !item.select} : {...item, select: false}
+            return item.comp === comp? {...item, select: true} : {...item, select: false}
         }))
     }
+    
     return (
       <div>
         <span>Select Tip %</span>
@@ -26,6 +27,7 @@ const Tip = ({ SelectedTip, SetSelectedTip  }) => {
             let bgColor = SelectedTip[idx].select?"item-selected":"item";
 
             if (idx === SelectedTip.length - 1) {
+              let bgColor = SelectedTip[idx].select?"item-selected":"item-custom";
               return (
                 <div
                 key={idx}
@@ -39,7 +41,7 @@ const Tip = ({ SelectedTip, SetSelectedTip  }) => {
                   placeholder={"Custom"}
                   value={SelectedTip[idx].value}
                   style={{ background: "none", border: "none" }}
-                  className={`${color}  fw-bold text-center col-12 py-2`}
+                  className={`fw-bold text-center col-12 py-2`}
                 />
               </div>
               )
